@@ -11,7 +11,7 @@ require('./services/passport');
 mongoose.connect(keys.mongoURI);
 
 const app = express();
-//wtf
+
 app.use(bodyParser.json());
 app.use(
   cookieSession({
