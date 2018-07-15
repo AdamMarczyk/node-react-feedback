@@ -27,6 +27,11 @@ module.exports = app => {
         };
       }
     });
+
+    const compactEvents = _.compact(events);
+    const uniqueEvents = _.uniqBy(compactEvents, 'email', 'surveyId');
+
+    res.send({});
   });
 
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
