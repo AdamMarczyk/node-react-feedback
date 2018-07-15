@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SurveyField = () => {
+const SurveyField = ({ input }) => {
   return (
     <div>
-      <input />
+      <input {...input} />
     </div>
   );
 };
