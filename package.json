@@ -13,7 +13,9 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "webhook": "forever sendgrid_webhook.js"
+    "webhook": "forever sendgrid_webhook.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -32,9 +34,11 @@
     "passport-google-oauth20": "^1.0.0",
     "path-parser": "^4.2.0",
     "sendgrid": "^5.2.3",
-    "stripe": "^6.2.1"
+    "stripe": "^6.2.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "forever": "^0.15.3"
-  }
+  },
+  "snyk": true
 }
