@@ -35,6 +35,6 @@
     "stripe": "^6.2.1"
   },
   "devDependencies": {
-    "forever": "^0.15.3"
+    "forever": "^1.0.0"
   }
 }
