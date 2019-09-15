@@ -8,9 +8,9 @@ interface IHeaderProps {
   auth: any
 }
 
-class Header extends React.Component<IHeaderProps> {
-  renderContent() {
-    switch (this.props.auth) {
+const Header = (props: IHeaderProps) => {
+  const renderContent = () => {
+    switch (props.auth) {
       case null:
         return 'Still deciding';
       case false:
@@ -25,7 +25,7 @@ class Header extends React.Component<IHeaderProps> {
             <Payments />
           </li>,
           <li key="2" style={{ margin: '0 10px' }}>
-            Credits: {this.props.auth.credits}
+            Credits: {props.auth.credits}
           </li>,
           <li key="3">
             <a href="/api/logout">Logout</a>
@@ -33,21 +33,19 @@ class Header extends React.Component<IHeaderProps> {
         ];
     }
   }
-  render() {
-    return (
-      <nav>
-        <div className="nav-wrapper">
-          <Link
-            to={this.props.auth ? '/surveys' : '/'}
-            className="left brand-logo"
-          >
-            Emaily
+  return (
+    <nav>
+      <div className="nav-wrapper">
+        <Link
+          to={props.auth ? '/surveys' : '/'}
+          className="left brand-logo"
+        >
+          Emaily
           </Link>
-          <ul className="right">{this.renderContent()}</ul>
-        </div>
-      </nav>
-    );
-  }
+        <ul className="right">{renderContent()}</ul>
+      </div>
+    </nav>
+  );
 }
 
 function mapStateToProps({ auth }: any) {

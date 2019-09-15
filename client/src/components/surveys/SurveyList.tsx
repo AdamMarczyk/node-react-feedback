@@ -16,13 +16,13 @@ interface ISurveyListProps {
   surveys: ISurvey[]
 }
 
-class SurveyList extends React.Component<ISurveyListProps> {
-  componentDidMount() {
-    this.props.fetchSurveys();
-  }
+const SurveyList = (props: ISurveyListProps) => {
+  React.useEffect(() => {
+    props.fetchSurveys();
+  }, []);
 
-  renderSurveys() {
-    return this.props.surveys.reverse().map(survey => {
+  const renderSurveys = () => {
+    return props.surveys.reverse().map(survey => {
       return (
         <div className="card darken-1" key={survey._id}>
           <div className="card-content">
@@ -40,10 +40,7 @@ class SurveyList extends React.Component<ISurveyListProps> {
       );
     });
   }
-
-  render() {
-    return <div>{this.renderSurveys()}</div>;
-  }
+  return <div>{renderSurveys()}</div>;
 }
 
 function mapStateToProps({ surveys }: any) {

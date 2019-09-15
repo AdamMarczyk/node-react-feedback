@@ -11,8 +11,8 @@ interface ISurveyFormProps {
   onSurveySubmit: () => void;
 }
 
-class SurveyForm extends React.Component<any> {
-  renderFields() {
+const SurveyForm = (props: any) => {
+  const renderFields = () => {
     return _.map(formFields, ({ label, name }: { label: string; name: string }) => {
       return (
         <Field
@@ -25,22 +25,21 @@ class SurveyForm extends React.Component<any> {
       );
     });
   }
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
-          {this.renderFields()}
-          <Link to="/surveys" className="red btn-flat white-text">
-            Cancel
+
+  return (
+    <div>
+      <form onSubmit={props.handleSubmit(props.onSurveySubmit)}>
+        {renderFields()}
+        <Link to="/surveys" className="red btn-flat white-text">
+          Cancel
           </Link>
-          <button type="submit" className="teal btn-flat right white-text">
-            Next
+        <button type="submit" className="teal btn-flat right white-text">
+          Next
             <i className="material-icons right">done</i>
-          </button>
-        </form>
-      </div>
-    );
-  }
+        </button>
+      </form>
+    </div>
+  );
 }
 
 function validate(values: any) {
