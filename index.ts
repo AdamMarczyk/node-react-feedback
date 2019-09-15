@@ -1,14 +1,14 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cookieSession = require('cookie-session');
-const passport = require('passport');
-const bodyParser = require('body-parser');
-const keys = require('./config/keys');
-require('./models/User');
-require('./models/Survey');
-require('./services/passport');
+import * as bodyParser from 'body-parser';
+import cookieSession from 'cookie-session';
+import * as express from 'express';
+import * as mongoose from 'mongoose';
+import passport from 'passport';
+import keys from './config/keys';
+import './models/Survey';
+import './models/User';
+import './services/passport';
 
-mongoose.Promise = global.Promise;
+(<any>mongoose).Promise = global.Promise;
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true

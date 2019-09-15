@@ -1,16 +1,16 @@
-const _ = require('lodash');
-const Path = require('path-parser');
-const { URL } = require('url');
-const mongoose = require('mongoose');
-const requireLogin = require('../middlewares/requireLogin');
-const requireCredits = require('../middlewares/requireCredits');
-const Mailer = require('../services/Mailer');
-const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
+import _ from 'lodash';
+import mongoose from 'mongoose';
+import Path from 'path-parser';
+import { URL } from 'url';
+import requireCredits from '../middlewares/requireCredits';
+import requireLogin from '../middlewares/requireLogin';
+import surveyTemplate from '../services/emailTemplates/surveyTemplate';
+import Mailer from '../services/Mailer';
 
 const Survey = mongoose.model('surveys');
 
-module.exports = app => {
-  app.get('api/surveys', requireLogin, async (req, res) => {
+export default (app: any) => {
+  app.get('api/surveys', requireLogin, async (req: any, res: any) => {
     const surveys = await Survey.find({
       _user: req.user.id
     }).select({ recipients: false });
@@ -18,26 +18,28 @@ module.exports = app => {
     res.send(surveys);
   });
 
-  app.get('/api/surveys/:surveyId/:choice', (req, res) => {
+  app.get('/api/surveys/:surveyId/:choice', (req: any, res: any) => {
     res.send('Thanks for voting!');
   });
 
-  app.post('/api/surveys/webhooks', (req, res) => {
+  app.post('/api/surveys/webhooks', (req: any, res: any) => {
     const p = new Path('/api/surveys/:surveyId/:choice');
     _.chain(req.body)
-      .map(({ email, url }) => {
+      .map(({ email, url }: any) => {
         const match = p.test(new URL(url).pathname);
         if (match) {
           return {
             email,
+            //@ts-ignore
             surveyId: match.surveyId,
+            //@ts-ignore
             choice: match.choice
           };
         }
       })
       .compact()
       .uniqBy('email', 'surveyId')
-      .each(({ surveyId, email, choice }) => {
+      .each(({ surveyId, email, choice }: any) => {
         Survey.updateOne(
           {
             _id: surveyId,
@@ -57,14 +59,14 @@ module.exports = app => {
     res.send({});
   });
 
-  app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
+  app.post('/api/surveys', requireLogin, requireCredits, async (req: any, res: any) => {
     const { title, subject, body, recipients } = req.body;
 
     const survey = new Survey({
       title,
       subject,
       body,
-      recipients: recipients.split(',').map(email => ({ email: email.trim() })),
+      recipients: recipients.split(',').map((email: any) => ({ email: email.trim() })),
       _user: req.user.id,
       dateSent: Date.now()
     });

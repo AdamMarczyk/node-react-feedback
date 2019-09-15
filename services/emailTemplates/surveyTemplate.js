@@ -1,6 +1,6 @@
-const keys = require('../../config/keys');
+import keys from '../../config/keys';
 
-module.exports = survey => {
+export default (survey) => {
   return `
     <html>
       <body>
@@ -11,7 +11,7 @@ module.exports = survey => {
           <div>
             <a href="${keys.redirectDomain}/api/surveys/${
     survey.id
-  }/yes">Yes</a>
+    }/yes">Yes</a>
           </div>
           <div>
             <a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>

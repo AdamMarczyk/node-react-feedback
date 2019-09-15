@@ -1,6 +1,6 @@
-const passport = require('passport');
+import passport from 'passport';
 
-module.exports = app => {
+export default (app: any) => {
   app.get(
     '/auth/google',
     passport.authenticate('google', {
@@ -11,17 +11,17 @@ module.exports = app => {
   app.get(
     '/auth/google/callback',
     passport.authenticate('google'),
-    (req, res) => {
+    (req: any, res: any) => {
       res.redirect('/surveys');
     }
   );
 
-  app.get('/api/logout', (req, res) => {
+  app.get('/api/logout', (req: any, res: any) => {
     req.logout();
     res.redirect('/');
   });
 
-  app.get('/api/current_user', (req, res) => {
+  app.get('/api/current_user', (req: any, res: any) => {
     res.send(req.user);
   });
 };

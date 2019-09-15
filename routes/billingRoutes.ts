@@ -1,10 +1,11 @@
-const keys = require('../config/keys');
+import keys from '../config/keys';
+//@ts-ignore
 const stripe = require('stripe')(keys.stripeSecretKey);
 
 const requireLogin = require('../middlewares/requireLogin');
 
-module.exports = app => {
-  app.post('/api/stripe', requireLogin, async (req, res) => {
+export default (app: any) => {
+  app.post('/api/stripe', requireLogin, async (req: any, res: any) => {
     const charge = await stripe.charges.create({
       amount: 500,
       currency: 'usd',
