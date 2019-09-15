@@ -1,13 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 import * as actions from '../actions';
+import Dashboard from './Dashboard';
 import Header from './Header';
 import Landing from './Landing';
-import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 
-class App extends React.Component {
+interface IAppProps {
+  fetchUser: () => {};
+}
+
+class App extends React.Component<IAppProps> {
   componentDidMount() {
     this.props.fetchUser();
   }

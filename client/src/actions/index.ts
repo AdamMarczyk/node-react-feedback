@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_SURVEYS } from './types';
+import { FETCH_SURVEYS, FETCH_USER } from './types';
 
-export const fetchUser = () => async dispatch => {
+export const fetchUser = () => async (dispatch: any) => {
   const res = await axios.get('/api/current_user');
 
   dispatch({
@@ -10,7 +10,7 @@ export const fetchUser = () => async dispatch => {
   });
 };
 
-export const handleToken = token => async dispatch => {
+export const handleToken = (token: string) => async (dispatch: any) => {
   const res = await axios.post('/api/stripe', token);
 
   dispatch({
@@ -19,7 +19,7 @@ export const handleToken = token => async dispatch => {
   });
 };
 
-export const submitSurvey = (values, history) => async dispatch => {
+export const submitSurvey = (values: any, history: any) => async (dispatch: any) => {
   const res = await axios.post('/api/surveys', values);
 
   history.push('/surveys');
@@ -29,7 +29,7 @@ export const submitSurvey = (values, history) => async dispatch => {
   });
 };
 
-export const fetchSurveys = () => async dispatch => {
+export const fetchSurveys = () => async (dispatch: any) => {
   const res = await axios.get('api/surveys');
 
   dispatch({ type: FETCH_SURVEYS, payload: res.data });

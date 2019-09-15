@@ -1,6 +1,15 @@
 import React from 'react';
 
-const SurveyField = ({ input, label, meta: { error, touched } }) => {
+interface ISurveyFieldProps {
+  input: any;
+  label: string;
+  meta: {
+    error: boolean;
+    touched: boolean;
+  }
+}
+
+const SurveyField = ({ input, label, meta: { error, touched } }: ISurveyFieldProps) => {
   return (
     <div>
       <label>{label}</label>

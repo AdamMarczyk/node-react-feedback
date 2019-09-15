@@ -2,7 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSurveys } from '../../actions';
 
-class SurveyList extends React.Component {
+interface ISurvey {
+  _id: string;
+  title: string;
+  body: any;
+  dateSent: string;
+  yes: boolean;
+  no: boolean;
+}
+
+interface ISurveyListProps {
+  fetchSurveys: () => {};
+  surveys: ISurvey[]
+}
+
+class SurveyList extends React.Component<ISurveyListProps> {
   componentDidMount() {
     this.props.fetchSurveys();
   }
@@ -32,7 +46,7 @@ class SurveyList extends React.Component {
   }
 }
 
-function mapStateToProps({ surveys }) {
+function mapStateToProps({ surveys }: any) {
   return { surveys };
 }
 
