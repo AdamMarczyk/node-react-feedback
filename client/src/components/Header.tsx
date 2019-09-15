@@ -1,10 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import Payments from './Payments';
 
-class Header extends React.Component {
+
+interface IHeaderProps {
+  auth: any
+}
+
+class Header extends React.Component<IHeaderProps> {
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -46,7 +50,7 @@ class Header extends React.Component {
   }
 }
 
-function mapStateToProps({ auth }) {
+function mapStateToProps({ auth }: any) {
   return { auth };
 }
 

@@ -1,6 +1,6 @@
 const re = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-export default emails => {
+export default (emails: string) => {
   const invalidEmails = emails
     .split(',')
     .map(email => email.trim())
