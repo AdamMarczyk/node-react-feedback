@@ -93,9 +93,9 @@
     "@types/mime" "*"
 
 "@types/stripe@^6.32.1":
-  version "6.32.1"
-  resolved "https://registry.yarnpkg.com/@types/stripe/-/stripe-6.32.1.tgz#4521fe98251390c711c863fd7f11360859d4f661"
-  integrity sha512-YBT5xvIE5bkiUumUVRhGxsKsE6FVFY190lX2eJ9iA6otSRJuMaoaoMt4TrAhVsAGOYkly3QEd+3SEB+abOcQ+w==
+  version "6.32.5"
+  resolved "https://registry.yarnpkg.com/@types/stripe/-/stripe-6.32.5.tgz#523776d418ac948a566271ea253f98b9c50c4a16"
+  integrity sha512-dD5M1vFqCLT4K9ZIlexIYUpCP/Ws4bwV2pDotxUfEQkWN6sUwP//8sc9QHaLTFMcr3KZW7jJk4bNefJlvg1+Bw==
   dependencies:
     "@types/node" "*"
 
