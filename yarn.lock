@@ -92,10 +92,10 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@types/stripe@^6.32.1":
-  version "6.32.1"
-  resolved "https://registry.yarnpkg.com/@types/stripe/-/stripe-6.32.1.tgz#4521fe98251390c711c863fd7f11360859d4f661"
-  integrity sha512-YBT5xvIE5bkiUumUVRhGxsKsE6FVFY190lX2eJ9iA6otSRJuMaoaoMt4TrAhVsAGOYkly3QEd+3SEB+abOcQ+w==
+"@types/stripe@^7.10.7":
+  version "7.10.7"
+  resolved "https://registry.yarnpkg.com/@types/stripe/-/stripe-7.10.7.tgz#04da52da43a378459f38d226fc6540a95de686ce"
+  integrity sha512-U6LcWWD7Qu/TMGX44U3FNotqC3GcR1bE/E/+NSEwDGxGpGpXlsoJGzwhzNFJgytpG10NzyMcvGGTse36/JngvA==
   dependencies:
     "@types/node" "*"
 
