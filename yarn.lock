@@ -3281,9 +3281,9 @@ strip-json-comments@~2.0.1:
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
 stripe@^7.9.0:
-  version "7.9.0"
-  resolved "https://registry.yarnpkg.com/stripe/-/stripe-7.9.0.tgz#9cf10d24dcb49a98159dcf3ba10dd9a1e099bcf2"
-  integrity sha512-nftVEpqjYhRaRlIJgmEX5+NjTNyUBsBRGJiMTfS+eHpbuf6Nh6t5YylmcBN+Oh6BiAsAN9NfRncBe9xoeGxlcw==
+  version "7.14.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-7.14.0.tgz#72e65cad328726ba268321f65604f57a932fc511"
+  integrity sha512-2YSSuJ18jxue0xhW2gZIoz4asC8rITvsNxzh/KuYVKK3dELK6/4M8yoGfSjFcic0D1FtJBB0j6l8Ty26a2L08w==
   dependencies:
     qs "^6.6.0"
 
