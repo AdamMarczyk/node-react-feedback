@@ -40,7 +40,7 @@
     "@types/lodash": "^4.14.138",
     "@types/mongoose": "^5.5.17",
     "@types/passport": "^1.0.1",
-    "@types/stripe": "^6.32.1",
+    "@types/stripe": "^7.13.22",
     "forever": "^1.0.0",
     "typescript": "^3.6.3"
   }
