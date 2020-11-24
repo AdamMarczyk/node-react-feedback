@@ -72,6 +72,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.5.tgz#e19436e7f8e9b4601005d73673b6dc4784ffcc2f"
   integrity sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
 
+"@types/node@>=8.1.0":
+  version "14.14.9"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.9.tgz#04afc9a25c6ff93da14deabd65dc44485b53c8d6"
+  integrity sha512-JsoLXFppG62tWTklIoO4knA+oDTYsmqWxHRvd4lpmfQRNhX6osheUOWETP2jMoV/2bEHuMra8Pp3Dmo/stBFcw==
+
 "@types/passport@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/passport/-/passport-1.0.1.tgz#bf082e29497d09410e13c260903571a489bf9c2a"
@@ -92,12 +97,12 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@types/stripe@^6.32.1":
-  version "6.32.1"
-  resolved "https://registry.yarnpkg.com/@types/stripe/-/stripe-6.32.1.tgz#4521fe98251390c711c863fd7f11360859d4f661"
-  integrity sha512-YBT5xvIE5bkiUumUVRhGxsKsE6FVFY190lX2eJ9iA6otSRJuMaoaoMt4TrAhVsAGOYkly3QEd+3SEB+abOcQ+w==
+"@types/stripe@^8.0.9":
+  version "8.0.9"
+  resolved "https://registry.yarnpkg.com/@types/stripe/-/stripe-8.0.9.tgz#d4e6d0072494458395990dbfd2aa5a0818a96cf3"
+  integrity sha512-ud97ttyRpeV8Kit+m85B9OsMmrKHHOO2BUsWLAZ3QwenVUaUfalp6MHV6JLCaWiZZAblVYi1i9nFwvHxMS0gLw==
   dependencies:
-    "@types/node" "*"
+    stripe "*"
 
 abbrev@1:
   version "1.1.1"
@@ -3279,6 +3284,14 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
+
+stripe@*:
+  version "8.125.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-8.125.0.tgz#61b8d4b08b810ef2aa30af7e4342c5072233853c"
+  integrity sha512-5M4r7X1ddKtuDcT+LdnyhPg4mi3S6SQTgJ5Zq4R3Oh2zpSXQZwwA9Yg0bd7Ej0AIMS3WZn/h6yLU2nvrM9OWjg==
+  dependencies:
+    "@types/node" ">=8.1.0"
+    qs "^6.6.0"
 
 stripe@^7.9.0:
   version "7.9.0"
